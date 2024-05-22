@@ -1,0 +1,15 @@
+.conteiner-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: black;
+    color: white;
+}
+
+.carta{
+    background-color: rgb(41, 36, 36);
+    color: white;
+    border: none;
+}

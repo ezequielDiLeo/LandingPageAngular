@@ -1,0 +1,35 @@
+
+<div class="container-contact">
+    <form [formGroup]="contactForm" (submit)="enviar($event)">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="name@example.com" 
+          formControlName="email"
+          [ngClass]="{'is-invalid' : hasErrors('email', 'required') || hasErrors('email', 'email')}"
+          >
+          @if (hasErrors('email', 'required')) {
+              <span class="text-danger">you have to complete this field</span>
+          }
+          @if (hasErrors('email', 'email')) {
+              <span class="text-danger">you have to complete this field</span>
+          }
+          <div id="emailHelp" class="form-text">
+            <p class="share">We'll never share your email with anyone else.</p></div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label" >Password</label>
+          <input type="password" class="input form-control" id="exampleInputPassword1" 
+          formControlName="password"
+          [ngClass]="{'is-invalid' : hasErrors('password', 'required' || hasErrors('password', 'minLength') )}"
+          >
+          @if (hasErrors('password', 'required')) {
+              <span class="text-danger">Invalid password</span>
+          }
+          @if (hasErrors('password', 'minLength')) {
+              <span class="text-danger">At least 5 characters</span>
+          }
+        </div>
+        <button type="submit" class="btn btn-primary" >Submit</button>
+      </form>
+</div>
